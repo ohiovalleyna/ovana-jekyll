@@ -118,10 +118,13 @@ layout: default
             {% assign hours = meeting.time | divided_by: 3600 %}
             {% assign ampm = 'AM' %}
             {% if hours >= 12 }
-                {% assign hours = hours | minus: 12 %}
+                {% assign newHours = hours | minus: 12 %}
+                {% assign hours = newHours %}
                 {% assign ampm = 'PM' %}
             {% endif %}
             {% assign minutes = meeting.time | modulo: 3600 | divided_by: 60 %}
+            {% if minutes < 10 %}
+                {% assign minutes = minutes | prepend: '0'}
             <th>{{ meeting.dayOfWeek }} {{ hours | append: ':' | append: minutes | append: ' ' | append: ampm  }}</th>
         </tr>
         <tr color:Red>
