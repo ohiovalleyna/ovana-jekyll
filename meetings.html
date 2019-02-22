@@ -23,15 +23,6 @@ layout: navbar-page
         }
     });
 </script>
-<div style="margin:0 auto">
-    <span class="badge badge-secondary">Sunday</span>
-    <span class="badge badge-secondary">Monday</span>
-    <span class="badge badge-secondary">Tuesday</span>
-    <span class="badge badge-secondary">Wednesday</span>
-    <span class="badge badge-secondary">Thursday</span>
-    <span class="badge badge-secondary">Friday</span>
-    <span class="badge badge-secondary">Saturday</span>
-</div>
 
 {% for meeting in site.data.meetings %}
 <table class='meetingTable smallerTable {{ meeting.dayOfWeek }}' align='center'>
@@ -66,18 +57,11 @@ layout: navbar-page
         <td>
             {% for tag in meeting.tags %}
             {% if tag.visible %}
-            <span class="badge bad-primary">{{tag.tag }}</span>
+            <span class="badge bad-primary">{{ tag.tag }}</span>
             {% else %}
-            <div style="display:none;">{{tag.tag}}</div>
+            <div style="display:none;">{{ tag.tag }}</div>
             {% endif %}
             {% endfor %}
-            <!-- <strong>
-            {% assign visibleTags = meeting.tags | where: "visible", true %}
-            {{visibleTags | join }}
-            {% for tag in visibleTags %}
-            {{ tag.tag }}
-            {% endfor %}
-            </strong> -->
         </td>
     </tr>
 </table>
