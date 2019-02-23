@@ -1,0 +1,64 @@
+---
+layout: navbar-page
+---
+<script type="text/javascript">
+    // Read a page's GET URL variables and return them as an associative array.
+    function getUrlVars() {
+        var vars = [],
+            hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+</script>
+<script type="text/javascript">
+    $(function () {
+        if (getUrlVars()["day_of_week"]) {
+            $('.meetingCard').not('.' + getUrlVars()["day_of_week"]).css('display', 'none');
+        }
+    });
+</script>
+ <!-- <span>Search:</span>
+ <input type="text" name="keyword" class="form-control input-sm" placeholder='Try "Open", "Kentucky", "Evening", "Hope", etc...'> -->
+{% for meeting in site.data.meetings %}
+{% assign hours = meeting.time | divided_by: 3600 %}
+            {% assign ampm = 'AM' %}
+            {% if hours >= 12 %}
+            {% assign ampm = 'PM' %}
+            {% endif %}
+            {% if hours > 12 %}
+            {% assign hours = hours | minus: 12 %}
+            {% endif %}
+            {% assign minutes = meeting.time | modulo: 3600 | divided_by: 60 %}
+            {% if minutes < 10 %} {% assign minutes=minutes | prepend: '0' %} {% endif %} 
+<div class="meetingCard {{ meeting.dayOfWeek }} card border-primary mb-3" style="margin: 0 auto; max-width: 35rem;">
+    <h3 class="card-header">{{ meeting.groupName }}</h3>
+    <div class="card-body">
+        <h5 class="card-title">{{meeting.dayOfWeek}}s at {{
+                hours | append: ':' | append: minutes | append: ' ' | append: ampm }}</h5>
+        <p class="card-text">
+            {% if meeting.location != '' and meeting.location != nil %}
+            {{ meeting.location }}<br />
+            {% endif %}
+            {{ meeting.address.street }} <br />
+            {{ meeting.address.city }}, {{ meeting.address.state}} {{meeting.address.zip}}
+        </p>
+        {% assign visibleTags = meeting.tags | where: "visible", "true" %}
+        {% if visibleTags != '' %}
+        <div class="card-footer text-muted">
+                {% for tag in visibleTags  %}
+                <span class="badge badge-primary">{{ tag.tag }}</span>
+                {% endfor %}
+        </div>
+        {%endif %}
+        {% assign invisibleTags = meeting.tags | where: "visible", "false" %}
+        {% for tag in invisibleTags %}
+            <div style="display:none;">{{tag.tag }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
