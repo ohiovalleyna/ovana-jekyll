@@ -1,0 +1,9 @@
+---
+layout: navbar-page
+---
+<h1>Area Documents</h1>
+{% for document in site.data.documents %}
+<div>
+<a href="{{document.documentLocation}}">{{document.linkText}}</a>
+</div>
+{% endfor %}

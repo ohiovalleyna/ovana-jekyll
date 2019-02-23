@@ -1,4 +1,4 @@
-<html>
+<html  style="width: 100%">
 
 <head>
     <meta charset="utf-8">
@@ -9,109 +9,56 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 
     <!-- JQuery -->
-    <script src="http://www.iclubz.com/js/jquery.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="http://www.iclubz.com/js/readmore.min.js"></script>
-    <script src="http://www.iclubz.com/js/chosen.jquery.js"></script>
-    <script src="http://www.iclubz.com/js/jquery.validate.min.js"></script>
-    <script src="http://www.iclubz.com/js/fileinput.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
 
 <!-- NAVBAR
 ================================================== -->
 
-<body>
-    <div class='navbar-wrapper'>
-        <div class='container'>
-
-            <nav class='navbar navbar-inverse navbar-static-top'>
-                <div class='container'>
-                    <div class='navbar-header'>
-                        <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar'
-                            aria-expanded='false' aria-controls='navbar'>
-                            <span class='sr-only'>Toggle navigation</span>
-                            <span class='icon-bar'></span>
-                            <span class='icon-bar'></span>
-                            <span class='icon-bar'></span>
-                        </button>
-                        <a class='navbar-brand smallFont' href='#'>
-                            <font color='red' size='6'>O</font>HIO <font color='red' size='6'>V</font>ALLEY <font color='red'
-                                size='6'>A</font>REA OF <font color='red' size='6'>N</font>ARCOTICS <font color='red'
-                                size='6'>A</font>NONYMOUS
+<body style="width: 100%">
+    <div id="navbar-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-inverse navbar-static-top">
+            <a class="navbar-brand smallFont" href="index.html">
+                <font color="red" size="6">O</font>HIO <font color="red" size="6">V</font>ALLEY <font color="red"
+                    size="6">A</font>REA OF <font color="red" size="6">N</font>ARCOTICS <font color="red"
+                    size="6">A</font>NONYMOUS
+            </a>                
+            <div id="navbarSupportedContent" class="navbar-collapse collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calendar.html">Calendar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="areadocuments.html">Area Documents</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" id="navbarDropdown" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Meetings
                         </a>
-                    </div>
-                    <div id='navbar' class='navbar-collapse collapse'>
-                        <ul class='nav navbar-nav'>
-                            <li class='active'><a href='index.html'>Home</a></li>
-                            <li><a href='calendar.html'>Calendar</a></li>
-                            <li class='dropdown'><a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button'
-                                    aria-haspopup='true' aria-expanded='false'>Meetings<span class='caret'></span></a>
-                                <ul class='dropdown-menu'>
-                                    <div text-align: center>
-                                        <form action='meetings.html' method='get'>
-                                            <a href='javascript:;'' onclick=' parentNode.submit();''>
-                                                <font size='4'>Monday</font>
-                                            </a>
-                                            <input type='hidden' name='day_of_week' value=Monday>
-                                        </form>
-                                    </div>
-                                    <form action='meetings.html' method='get'>
-                                        <a href='javascript:;' onclick='parentNode.submit();'>
-                                            <font size='4'>Tuesday</font>
-                                        </a>
-                                        <input type='hidden' name='day_of_week' value=Tuesday>
-                                    </form>
-                                    <form action='meetings.html' method='get'>
-                                        <a href='javascript:;' onclick='parentNode.submit();'>
-                                            <font size='4'>Wednesday</font>
-                                        </a>
-                                        <input type='hidden' name='day_of_week' value=Wednesday>
-                                    </form>
-                                    <form action='meetings.html' method='get'>
-                                        <a href='javascript:;' onclick='parentNode.submit();'>
-                                            <font size='4'>Thursday</font>
-                                        </a>
-                                        <input type='hidden' name='day_of_week' value=Thursday>
-                                    </form>
-                                    <form action='meetings.html' method='get'>
-                                        <a href='javascript:;' onclick='parentNode.submit();'>
-                                            <font size='4'>Friday</font>
-                                        </a>
-                                        <input type='hidden' name='day_of_week' value=Friday>
-                                    </form>
-                                    <form action='meetings.html' method='get'>
-                                        <a href='javascript:;' onclick='parentNode.submit();'>
-                                            <font size='4'>Saturday</font>
-                                        </a>
-                                        <input type='hidden' name='day_of_week' value=Saturday>
-                                    </form>
-                                    <form action='meetings.html' method='get'>
-                                        <a href='javascript:;' onclick='parentNode.submit();'>
-                                            <font size='4'>Sunday</font>
-                                        </a>
-                                        <input type='hidden' name='day_of_week' value=Sunday>
-                                    </form>
-
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-        </div>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="meetings.html?day_of_week=Monday">Monday</a> 
+                            <a class="dropdown-item" href="meetings.html?day_of_week=Tuesday">Tuesday</a> 
+                            <a class="dropdown-item" href="meetings.html?day_of_week=Wednesday">Wednesday</a> 
+                            <a class="dropdown-item" href="meetings.html?day_of_week=Thursday">Thursday</a> 
+                            <a class="dropdown-item" href="meetings.html?day_of_week=Friday">Friday</a> 
+                            <a class="dropdown-item" href="meetings.html?day_of_week=Saturday">Saturday</a> 
+                            <a class="dropdown-item" href="meetings.html?day_of_week=Sunday">Sunday</a> 
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
     {{ content }}
 </body>
